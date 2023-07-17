@@ -18,7 +18,7 @@ const Navbar = () => {
                 </button>
                 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav mr-auto">
+                    {/* <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
                             <Link className="nav-link" href="#">Project <span className="sr-only">(current)</span></Link>
                         </li>
@@ -32,8 +32,8 @@ const Navbar = () => {
                             <Link className="nav-link" href="#">Daily </Link>
                         </li>
                         
-                    </ul>
-                    <form className="form-inline my-2 my-lg-0">
+                    </ul> */}
+                    <form className="form-inline my-2 my-lg-0  frm">
                         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">  <BsSearch/></button>
                     </form>
