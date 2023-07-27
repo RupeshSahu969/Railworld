@@ -21,9 +21,6 @@ public class Main {
 //		
 //		i1.add(10,20);
 		
-		
-		
-		
 		List<Student> students = new ArrayList<>();
 		students.add(new Student(10,"name1",780));
 		students.add(new Student(12,"name2",480));
