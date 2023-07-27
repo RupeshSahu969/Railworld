@@ -5,30 +5,56 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		ArrayList<Persion> persion = new ArrayList<Persion>();
+//
+//		ArrayList ar= new ArrayList();
+//		
+//		ar.add("a");
+//		ar.add("a");
+//		ar.add("a");
+//		ar.add("a");
+//		ar.add(1,"d");
+//		
+//		Object obj =ar.get(1);
+//		for(Object ob :ar) {
+//			System.out.println(ob);
+//		}
+//		
+//		
+//		Object ob2=ar.remove(2);
+//		System.out.println(ob2);
+//		
+//		
+//		List<String> str= new ArrayList<String>();
+//		
+//		str.add("RUpesh");
+//		str.add("Shubam");
+//		str.add("Ram");
+//		str.add("Abhilasha");
+//		str.add("khushi");
+//		str.add("Shubam sahu");
 		
-		Scanner sc = new Scanner(System.in);
 		
-		for(int i=0; i<=4; i++) {
-			System.out.println("ENter the name");
-			String name=sc.next();
-			System.out.println("ENter the age");
-			int age=sc.nextInt();
-			System.out.println("ENter the sal");
-			int sal=sc.nextInt();
-			System.out.println("ENter the gender");
-			String gender=sc.next();
-			
-			persion.add(new Persion(name,age,sal,gender));
-			
+		
+		ArrayList<Student> students=new ArrayList<Student>();
+		
+		Student st= new Student(1,34,"rupesh","male",23);
+//		students.add(st);
+		
+		students.add(new Student(1,34,"rupesh","male",23));
+		students.add(new Student(2,26,"ram","male",23));
+		students.add(new Student(3,23,"shubam","fmale",23));
+		students.add(new Student(4,14,"kaka","male",90));
+		students.add(new Student(5,94,"tiwari","fmale",89));
+		
+		
+		System.out.println(students.get(0));
+		
+		for(int i=0; i<students.size(); i++) {
+			System.out.println(students.get(i));
 		}
 		
-		for(Persion s: persion) {
-			System.out.println(s);
-		}
 		
-		
+		   
 	}
 
 }
