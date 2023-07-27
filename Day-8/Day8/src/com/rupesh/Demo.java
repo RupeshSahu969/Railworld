@@ -12,7 +12,7 @@ public class Demo {
 		System.out.println("Enter the gender");
 		String gender=sc.nextLine();
 		
-		System.out.println("Enter the name");
+		System.out.println("Enter the age");
 		int age =sc.nextInt();
 		
 		Student d1=new Student();
