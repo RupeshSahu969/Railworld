@@ -87,39 +87,29 @@ public class Main {
 		
 		
 		
-		  File f1 =    new File("challange.png");
-	      InputStream is =  new  FileInputStream(f1);
-	        
-	      byte[] num = new byte[(int)f1.length()];
-	      
-	        
-	      try {
-			is.read(num);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	      
-	      for(int n : num) {
-	    	     System.out.print(n);
-	      }
-	      
-	      File f2 =    new  File("challange1.png");
-	         try {
-				f2.createNewFile();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	    OutputStream fo =     new  FileOutputStream(f2);
-	    
-	      try {
-			fo.write(num);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	
+
+
+
+		        String directoryPath = ""; 
+
+		        File directory = new File(directoryPath);
+
+		        if (directory.exists() && directory.isDirectory()) {
+		            File[] files = directory.listFiles();
+
+		            if (files != null) {
+		                System.out.println("Existing Files:");
+		                for (File file : files) {
+		                    if (file.isFile()) {
+		                        System.out.println(file.getName());
+		                    }
+		                }
+		            } else {
+		                System.out.println("The directory is empty.");
+		            }
+		        } else {
+		            System.out.println("The directory does not exist.");
+		        }
 		
 		
 	}
