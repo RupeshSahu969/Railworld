@@ -19,5 +19,4 @@ public interface EmployeeDao {
 	    public List<Employee> getAllEmployee();
 	    
 	    
-	    
 }
