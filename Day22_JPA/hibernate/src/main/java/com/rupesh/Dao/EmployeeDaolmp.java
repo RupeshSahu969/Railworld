@@ -25,7 +25,7 @@ private EntityManager em;
 	public String addEmployee(Employee emp) {
 		// TODO Auto-generated method stub
 		 em.getTransaction().begin();
-         
+          
         Employee emp1 = em.merge(emp);
         
         em.getTransaction().commit();
@@ -45,13 +45,15 @@ private EntityManager em;
 	@Override
 	public Employee getEmployeeById(int id) throws EmployeeException {
 		// TODO Auto-generated method stub
-		 Employee emp =   em.find(Employee.class, id);
-		   
-		   if(emp != null) {
-			   return emp;
-		   }else {
-			   throw new EmployeeException("There is no employee with id : "+ id);
-		   }
+//		 Employee emp =   em.find(Employee.class, id);
+//		   
+//		   if(emp != null) {
+//			   return emp;
+//		   }else {
+//			   throw new EmployeeException("There is no employee with id : "+ id);
+//		   }
+		
+		return null;
 	}
 
 	@Override
