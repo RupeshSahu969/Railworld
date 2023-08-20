@@ -1,5 +1,6 @@
 package com.rupesh.modal;
 
+
 public class Employee {
 
 	public Integer empId;

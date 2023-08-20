@@ -19,6 +19,7 @@ public class EmployeeDaolmp implements EmployeeDao{
 	public String addEmployee(Employee emp) {
 		// TODO Auto-generated method stub
 		em.getTransaction().begin();
+		
 		Employee emp1 =em.merge(emp);
 		
 		em.getTransaction().commit();
