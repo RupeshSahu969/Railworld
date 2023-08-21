@@ -2,6 +2,8 @@ package com.rupeshs;
 
 import java.util.Scanner;
 
+import com.rupesh.Dao.EmployeeDao;
+import com.rupesh.Dao.EmployeeDaolmp;
 import com.rupesh.model.Employee;
 
 import jakarta.persistence.EntityManager;
@@ -11,22 +13,72 @@ import jakarta.persistence.Persistence;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 
 		 EntityManagerFactory emf =     Persistence.createEntityManagerFactory("empUnit");
 	      EntityManager    em =      emf.createEntityManager();
 	      
-	     Employee emp =    new Employee();
-	       emp.setEmpName("veena");
-	       emp.setAge(23);
-	       emp.setGender("Fmale");
-	           
-	          em.getTransaction().begin();
-	          em.getTransaction().commit();
-	          System.out.println("done...");
-	          em.close();
-
-		
+//	     Employee emp =  new Employee();
+//	       emp.setEmpName("sahu");
+//	       emp.setAge(21);
+//	       emp.setGender("male");
+//	       EmployeeDao empdao= new EmployeeDaolmp();
+//	    
+//	       empdao.addEmployee(emp);
+	       
+	       
+	       Scanner sc = new Scanner(System.in);
+		      
+		      
+		   System.out.println("Enter the emp Id");
+	       Integer id =  sc.nextInt();
+	        
+//	       em.getTransaction().begin();
+		       
+	       Employee emp2 =   em.find(Employee.class, id);
+	        
+//          em.remove(emp2);
+//          em.getTransaction().commit();
+//       
+//	       if(emp2 != null) {
+//	    	    System.out.println(emp2);
+//	       }
+//	       else 
+//	       {
+//	    	    System.out.println("There is no ewmployee with this id" + id);
+//	       }
+	       
+	       // Delete Cpmmomd
+	       
+//	       if(emp2 != null){
+//	    	   em.getTransaction().begin();
+//	    	   em.remove(emp2);
+//	    	   em.getTransaction().commit();
+//	    	   System.out.println("Student removed....");
+//	    	   }else
+//	    	   System.out.println("Student not found...");
+//	    	   em.close();
+//
+//	    	   System.out.println("Done...");
+	       
+	       // Update Data
+	       
+	       if(emp2 == null){
+	    	   System.out.println("Student does not exist..");
+	    	   }
+	    	   else
+	    	   {
+	    	   System.out.println("Enter the age");
+	    	   int age=sc.nextInt();
+	    	   em.getTransaction().begin();
+	    	   emp2.setAge(emp2.getAge());
+//	    	 
+	    	   em.getTransaction().commit();
+	    	   System.out.println("Marks is graced...");
+	    	   }
+	    	   em.close();
+	    	   System.out.println("done");
+	       
 	}
 
 }

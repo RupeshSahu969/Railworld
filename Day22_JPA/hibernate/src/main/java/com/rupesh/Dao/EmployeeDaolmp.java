@@ -1,9 +1,6 @@
 package com.rupesh.Dao;
-
 import java.util.List;
-import java.util.stream.Stream;
 
-import com.mysql.cj.Query;
 import com.rupesh.exception.EmployeeException;
 import com.rupesh.model.Employee;
 import com.rupesh.util.EMUtil;
@@ -45,21 +42,15 @@ private EntityManager em;
 	@Override
 	public Employee getEmployeeById(int id) throws EmployeeException {
 		// TODO Auto-generated method stub
-//		 Employee emp =   em.find(Employee.class, id);
-//		   
-//		   if(emp != null) {
-//			   return emp;
-//		   }else {
-//			   throw new EmployeeException("There is no employee with id : "+ id);
-//		   }
+		 Employee emp =   em.find(Employee.class, id);
+		   
+		   if(emp != null) {
+			   return emp;
+		   }else {
+			   throw new EmployeeException("There is no employee with id : "+ id);
+		   }
 		
-		return null;
-	}
-
-	@Override
-	public Employee updateEmployeeById(Employee emp) {
-		// TODO Auto-generated method stub
-		return null;
+	
 	}
 
 	@Override
@@ -85,6 +76,25 @@ private EntityManager em;
 		
 		
 		return null;
+	}
+
+
+	@Override
+	public Employee updateEmployeeById(int id) {
+		// TODO Auto-generated method stub
+		Employee updatedEmployee= new Employee();
+		
+		 Employee emp =   em.find(Employee.class, id);
+		   
+		   if(emp != null) {
+			   updatedEmployee.setEmpName(emp.getEmpName());
+			   updatedEmployee.setAge(emp.getAge());
+			   updatedEmployee.setGender(emp.getGender());
+			  
+			   return updatedEmployee;
+		   }else {
+			   return null;
+		   }
 	}
 
 	
