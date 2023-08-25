@@ -12,7 +12,7 @@ public interface EmployeeDao {
 	    
 	    public Employee getEmployeeById(int id)   throws EmployeeException;
 	    
-	    public Employee updateEmployeeById(Employee emp);
+	    public Employee updateEmployeeById(int id);
 	    
 	    public Employee deleteEmpById(int id);
 	    
