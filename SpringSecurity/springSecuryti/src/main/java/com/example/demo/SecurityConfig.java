@@ -14,6 +14,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+import com.example.demo.config.EmployeeDetailService;
+
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
@@ -23,7 +25,7 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		
 		http.csrf(csrf -> csrf.disable())
-		.authorizeHttpRequests(auth -> auth.requestMatchers("/app/welcom").permitAll()
+		.authorizeHttpRequests(auth -> auth.requestMatchers("/app/welcom", "/app/add").permitAll()
 				.anyRequest().authenticated()
 				
 				)
@@ -37,13 +39,16 @@ public class SecurityConfig {
 	
 	public UserDetailsService userDetailsService(PasswordEncoder encoder) {
 		
-		UserDetails admin=User.withUsername("admin")
-				.password(encoder.encode("123")).roles("ADMIN").build();
-				
-		UserDetails user=User.withUsername("rupesh")
-				.password(encoder.encode("123")).roles("USER").build();
+//		UserDetails admin=User.withUsername("admin")
+//				.password(encoder.encode("123")).roles("ADMIN").build();
+//				
+//		UserDetails user=User.withUsername("rupesh")
+//				.password(encoder.encode("123")).roles("USER").build();
+//		
+//		return new InMemoryUserDetailsManager(admin,user);
 		
-		return new InMemoryUserDetailsManager(admin,user);
+		
+		return new EmployeeDetailService();
 		
 	}
 	
