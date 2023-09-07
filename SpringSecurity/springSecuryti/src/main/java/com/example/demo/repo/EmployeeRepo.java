@@ -9,9 +9,6 @@ import com.example.demo.entity.Employee;
 
 
 @Repository
-public interface EmployeeRepo extends JpaRepository<EmployeeRepo, Integer>{
-
-	
-	Optional<Employee> findByName(String name);
-	
+public interface EmployeeRepo extends JpaRepository<Employee, Integer> {
+    Optional<Employee> findByName(String name);
 }
