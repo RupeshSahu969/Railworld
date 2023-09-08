@@ -39,6 +39,9 @@ public class Controller {
 	@PostMapping("/add")
 	public String add(@RequestBody  Employee emp) {
 //		emp.setPassword(encoder.encode(emp.getPassword()));
+		
+		
+		
 		Employee emp1= empRepo.save(emp);
 		
 		return "Employee is saved in the database";
