@@ -29,10 +29,11 @@ public class EmployeeUserDetails implements UserDetails {
 	
 	public EmployeeUserDetails(Employee emp) {
 		// TODO Auto-generated constructor stub
-		
-		this.name=emp.getName();
-		this.pwd=emp.getPassword();
-		this.authorities=Arrays.stream(emp.getRoles().split(",")).map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+		this.name = emp.getName();
+		this.pwd = emp.getPassword();
+		this.authorities = Arrays.stream(emp.getRoles().split(","))
+				            .map(SimpleGrantedAuthority::new)
+				            .collect(Collectors.toList());
 		
 	}
 	
@@ -73,6 +74,7 @@ public class EmployeeUserDetails implements UserDetails {
 		return true;
 	}
 
+	
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
