@@ -1,6 +1,10 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+
+
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +21,11 @@ public class Controller {
 	
 	@Autowired
 	private EmployeeRepo empRepo;
+	
+	 @Autowired
+     private PasswordEncoder encoder;
+	
+	
 	
 	@GetMapping("/welcom")
 	public String welcom() {
@@ -36,16 +45,14 @@ public class Controller {
 	}
 	
 	
-	@PostMapping("/add")
-	public String add(@RequestBody  Employee emp) {
-//		emp.setPassword(encoder.encode(emp.getPassword()));
-		
-		
-		
-		Employee emp1= empRepo.save(emp);
-		
-		return "Employee is saved in the database";
-	}
+	 @PostMapping("/add")
+	   public String add(@RequestBody Employee emp) {
+		      emp.setPassword(encoder.encode(emp.getPassword()));
+		    Employee emp1 =     empRepo.save(emp);
+		    return "Employee is saved in the database";
+		         
+		        
+	   }
 	
 	
 	

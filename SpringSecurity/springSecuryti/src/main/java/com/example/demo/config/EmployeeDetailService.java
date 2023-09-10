@@ -19,11 +19,10 @@ public class EmployeeDetailService implements UserDetailsService {
 	private EmployeeRepo empRepo;
 	
 	
-	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
-		Employee emp=empRepo.findByName(username).orElseThrow(() -> new UsernameNotFoundException("This " + username +" is  not found "));
+		   Employee emp =     empRepo.findByName(username)
+		        .orElseThrow(() -> new UsernameNotFoundException("this "+username+" is not registered"));
 		return new EmployeeUserDetails(emp);
 	}
-
 }
