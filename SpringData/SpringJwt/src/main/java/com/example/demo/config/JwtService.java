@@ -45,9 +45,6 @@ public class JwtService {
 		}
 
 
-
-
-
 		private Key getSignKey() {
 			// TODO Auto-generated method stub
 			     byte[] keyCodes =    Decoders.BASE64.decode(SECERT);

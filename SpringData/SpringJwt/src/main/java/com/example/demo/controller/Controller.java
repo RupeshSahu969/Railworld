@@ -1,7 +1,11 @@
 package com.example.demo.controller;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +26,9 @@ public class Controller {
 	
 	@Autowired
 	private EmployeeRepo empRepo;
+	
+	@Autowired
+	private AuthenticationManager authManger;
 	
 	 @Autowired
      private PasswordEncoder encoder;
@@ -60,7 +67,13 @@ public class Controller {
 	@PostMapping("/authenticate")
 	public String generateToken(@RequestBody AuthRequest authRequest) {
 		
-	return	 jwtService.generateToken(authRequest.getName());
+		 Authentication auth =       authManger.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getName(), authRequest.getPassword()));
+	     if(auth.isAuthenticated()) {
+	    	 return   jwtService.generateToken(authRequest.getName());
+	     }else {
+	    	 throw new UsernameNotFoundException("there is user with name");
+	     }
+	
 		
 	}
 	
