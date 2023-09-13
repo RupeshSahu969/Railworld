@@ -33,10 +33,10 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		
 		http.csrf(csrf -> csrf.disable())
-		.authorizeHttpRequests(auth -> auth.requestMatchers("/app/welcom", "/app/add").permitAll()
-				.anyRequest().authenticated()
-				
-				)
+	      .authorizeHttpRequests(auth -> 
+	        auth.requestMatchers("/app/welcome", "/app/add", "/app/authenticate").permitAll()
+	        .anyRequest().authenticated()
+	        )
 		.formLogin(Customizer.withDefaults());
 		
 		return http.build();
