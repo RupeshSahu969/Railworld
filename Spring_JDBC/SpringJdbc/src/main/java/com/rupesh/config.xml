@@ -16,5 +16,6 @@
     <bean name="JdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <!-- Reference the "ds" bean as the dataSource for JdbcTemplate -->
         <property name="dataSource" ref="ds"/>
+        
     </bean>
 </beans>
