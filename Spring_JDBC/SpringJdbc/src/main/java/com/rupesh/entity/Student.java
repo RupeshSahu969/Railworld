@@ -1,4 +1,4 @@
-package com.rupesh;
+package com.rupesh.entity;
 
 public class Student {
  

@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Define a DriverManagerDataSource bean named "ds" -->
     <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="ds">  
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/> 
-        <property name="url"  value="jdbc:mysql://localhost:3306/springjdbc" />
-        <property name="username"  value="root" />
-        <property name="password"  value="root" />
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/> 
+        <property name="url" value="jdbc:mysql://localhost:3306/springjdbc" />
+        <property name="username" value="root" />
+        <property name="password" value="root" />
     </bean>
 
-    <!-- Define a JdbcTemplate bean named "JdbcTemplate" -->
-    <bean name="JdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    <!-- Define a JdbcTemplate bean named "jdbcTemplate" -->
+    <bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <!-- Reference the "ds" bean as the dataSource for JdbcTemplate -->
         <property name="dataSource" ref="ds"/>
-        
     </bean>
+    
+    <bean class="com.rupesh.dao.StudentDaoImpl" name="studentDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+    
+    
 </beans>
