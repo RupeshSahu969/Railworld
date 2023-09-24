@@ -42,14 +42,14 @@ public class App
         
 //        DELETE
         
-        Student student= new Student();
+//        Student student= new Student();
+//        
+//        
+//        int result=studentDao.delete(1);
+//        System.out.println(result);
         
+        Student student=studentDao.getStudent(3);
         
-        int result=studentDao.delete(7);
-        System.out.println(result);
-        
-        
-        
-        
+        System.out.println(student);
     }
 }

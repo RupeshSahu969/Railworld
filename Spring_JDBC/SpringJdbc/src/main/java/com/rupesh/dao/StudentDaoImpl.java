@@ -1,6 +1,7 @@
 package com.rupesh.dao;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
 import com.rupesh.entity.Student;
 
@@ -38,6 +39,21 @@ public class StudentDaoImpl implements StudentDao{
 	}
 	
 	
+	@Override
+	public Student getStudent(int studentId) {
+		// TODO Auto-generated method stub
+		
+		String query="Select * from student where id=?";
+		RowMapper<Student> rowMapper=new RopMapperImpl();
+	 Student student = this.jdbcTemplate.queryForObject(query,rowMapper,studentId );
+	 
+		
+		
+		return student;
+	}
+	
+	
+	
 public JdbcTemplate getJdbcTemplate() {
 	return jdbcTemplate;
 }
@@ -45,6 +61,8 @@ public JdbcTemplate getJdbcTemplate() {
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate =jdbcTemplate;
 	}
+
+	
 
 	
 
