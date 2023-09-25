@@ -1,8 +1,10 @@
 package com.rupesh;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.rupesh.dao.StudentDao;
 import com.rupesh.entity.Student;
@@ -17,16 +19,19 @@ public class App
     {
         System.out.println( "Hello Rupesh!" );
         
-        ApplicationContext context= new ClassPathXmlApplicationContext("com/rupesh/config.xml");
+//        ApplicationContext context= new ClassPathXmlApplicationContext("com/rupesh/config.xml");
+        
+        
+        ApplicationContext context= new AnnotationConfigApplicationContext(JdbcConfig.class);
         
         StudentDao  studentDao   =context.getBean("studentDao",StudentDao.class);
-//        Student student= new Student();
-//        student.setId(7);
-//        student.setName("Veena nagwanshi");
-//        student.setCity("baload");
-//        
-//        int result=studentDao.insert(student);
-//        System.out.println(result);
+        Student student= new Student();
+        student.setId(13);
+        student.setName("havi mishra");
+        student.setCity("baload");
+        
+        int result=studentDao.insert(student);
+        System.out.println(result);
         
 //       update
         
@@ -48,8 +53,16 @@ public class App
 //        int result=studentDao.delete(1);
 //        System.out.println(result);
         
-        Student student=studentDao.getStudent(3);
+//        Student student=studentDao.getStudent(6);
+//        
+//        System.out.println(student);
         
-        System.out.println(student);
+        List<Student> student1= studentDao.getAllStudents();
+        
+        for(Student s: student1) {
+        	System.out.println(s);
+        }
+        
+        
     }
 }
