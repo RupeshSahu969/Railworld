@@ -2,11 +2,14 @@ package com.rupesh.dao;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import com.rupesh.entity.Student;
 
+@Component("studnetDao")
 public class StudentDaoImpl implements StudentDao{
 
 	private JdbcTemplate jdbcTemplate;
@@ -72,7 +75,7 @@ public class StudentDaoImpl implements StudentDao{
 public JdbcTemplate getJdbcTemplate() {
 	return jdbcTemplate;
 }
-	
+	@Autowired
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate =jdbcTemplate;
 	}
