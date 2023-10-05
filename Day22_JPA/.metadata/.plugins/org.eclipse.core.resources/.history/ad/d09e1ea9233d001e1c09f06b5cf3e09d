@@ -1,0 +1,42 @@
+package com.rupesh.Dao;
+
+import java.util.List;
+
+import com.rupesh.exception.EmployeeException;
+import com.rupesh.model.Employee;
+
+public class EmployeeDaolmp implements EmployeeDao{
+
+	@Override
+	public String addEmployee(Employee emp) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee getEmployeeById(int id) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee updateEmployeeById(Employee emp) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee deleteEmpById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Employee> getAllEmployee() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
+}

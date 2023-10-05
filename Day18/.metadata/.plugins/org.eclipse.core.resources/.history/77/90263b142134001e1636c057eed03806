@@ -1,0 +1,65 @@
+package com.rupesh;
+
+import java.io.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+//		File f1= new File("rupesh.txt");
+//		
+//		System.out.println(f1.exists());
+//		
+//		try {
+//			boolean result=f1.createNewFile();
+//			System.out.println(result);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		boolean rs1=f1.delete();
+//		System.out.println(rs1);
+//		
+//		
+//		try {
+//			Writer fw= new FileWriter(f1);
+//			
+//			fw.write("Hello");
+//			fw.write("98");
+//			fw.write("/n");
+//			fw.write("Welcom");
+//			fw.flush();
+//			fw.close();
+//			
+//			
+//			
+//			
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		FileReader fr;
+		try {
+			fr = new FileReader("D://k.txt");
+			
+			int i =fr.read();
+			
+			while(i != -1) {
+				System.out.println((char) i);
+				i= fr.read();
+			}
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+	}
+
+}
