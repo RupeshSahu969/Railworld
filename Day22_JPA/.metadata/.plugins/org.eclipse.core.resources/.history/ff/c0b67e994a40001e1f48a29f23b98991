@@ -1,0 +1,26 @@
+package com.rupeshs;
+
+import com.rupesh.Dao.EmployeeDao;
+import com.rupesh.Dao.EmployeeDaolmp;
+import com.rupesh.model.Employee;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+//		 EntityManagerFactory emf =     Persistence.createEntityManagerFactory("empUnit");
+//	      EntityManager    em =      emf.createEntityManager();
+	      
+	     Employee emp =    new Employee();
+	       emp.setEmpName("veena");
+	       emp.setAge(23);
+	       emp.setGender("Fmale");
+	           
+	       EmployeeDao empdao= new EmployeeDaolmp();
+	    
+	       empdao.addEmployee(emp);
+		
+	}
+
+}

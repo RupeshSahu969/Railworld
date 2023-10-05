@@ -1,0 +1,16 @@
+package com.rupesh;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+
+		
+		FileInputStream fis= new FileInputStream("abc.txt");
+		FileInputStream fos= new FileInputStream("bcc.txt");
+	}
+
+}

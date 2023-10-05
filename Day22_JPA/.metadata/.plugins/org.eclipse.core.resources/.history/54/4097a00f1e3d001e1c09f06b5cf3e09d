@@ -1,0 +1,26 @@
+package com.rupesh.model;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+public class Employee {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	
+	 public Integer empId;
+    
+	  public String empName;
+	  
+	  public Integer age;
+	  
+	  public String gender;
+	  
+	  public Employee() {
+		// TODO Auto-generated constructor stub
+	}
+	  
+	  
+	  
+}

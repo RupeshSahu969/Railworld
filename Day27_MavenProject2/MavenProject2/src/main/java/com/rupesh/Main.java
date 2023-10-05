@@ -89,6 +89,8 @@ public class Main {
 		 if(emp != null) {
 			 em.getTransaction().begin();
 			 
+			 
+			 
 			 em.remove(emp);
 			 
 			 em.getTransaction().commit();

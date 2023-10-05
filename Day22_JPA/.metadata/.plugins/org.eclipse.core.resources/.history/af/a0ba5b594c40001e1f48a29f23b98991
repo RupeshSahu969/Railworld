@@ -1,0 +1,54 @@
+package com.rupeshs;
+
+import java.util.Scanner;
+
+import com.rupesh.Dao.EmployeeDao;
+import com.rupesh.Dao.EmployeeDaolmp;
+import com.rupesh.model.Employee;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		 EntityManagerFactory emf =     Persistence.createEntityManagerFactory("empUnit");
+	      EntityManager    em =      emf.createEntityManager();
+	      
+	     Employee emp =  new Employee();
+	       emp.setEmpName("sahu");
+	       emp.setAge(21);
+	       emp.setGender("male");
+	       EmployeeDao empdao= new EmployeeDaolmp();
+	    
+	       empdao.addEmployee(emp);
+	       
+	       
+	       Scanner sc = new Scanner(System.in);
+		      
+		      
+		   System.out.println("Enter the emp Id");
+	       Integer id =  sc.nextInt();
+	        
+	       em.getTransaction().begin();
+		       
+	       Employee emp2 =   em.find(Employee.class, id);
+	        
+          em.remove(emp2);
+          em.getTransaction().commit();
+       
+	       if(emp2 != null) {
+	    	    System.out.println(emp2);
+	       }
+	       else {
+	    	    System.out.println("There is no ewmployee with this id" + id);
+	       }
+	       
+	       
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.example.demo.config;
+
+public class JwtService {
+
+	public String generateToken(String username) {
+		
+		return null;
+	}
+	
+	
+}
