@@ -6,4 +6,9 @@ public interface EmployeeDao {
 
 	public String addEmployee(Employee emp);
 	
+	
+	public Employee getEmployeeById(int id);
+	
+	
+	
 }

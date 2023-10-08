@@ -32,6 +32,18 @@ public class EmployeeDaoImp implements EmployeeDao{
 		
 		return "Employee is not saved" + emp;
 	}
+
+	@Override
+	public Employee getEmployeeById(int id) {
+		// TODO Auto-generated method stub
+		
+		
+	Employee emp=	this.em.find(Employee.class, id);
+		
+		System.out.println(emp);
+		
+		return emp;
+	}
 	
 
 
