@@ -63,7 +63,7 @@ public class Controller {
 	   }
 	
 	
-	
+
 	@PostMapping("/authenticate")
 	public String generateToken(@RequestBody AuthRequest authRequest) {
 		

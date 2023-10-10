@@ -25,4 +25,4 @@ public class EmployeeDetailService implements UserDetailsService {
 		        .orElseThrow(() -> new UsernameNotFoundException("this "+username+" is not registered"));
 		return new EmployeeUserDetails(emp);
 	}
-}
+}  

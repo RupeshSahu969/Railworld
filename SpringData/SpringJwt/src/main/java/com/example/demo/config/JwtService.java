@@ -30,8 +30,6 @@ public class JwtService {
 	    
 	    
 	   
-
-
 		private String createToken(String username, Map<String, Object> claims) {
 			// TODO Auto-generated method stub
 			return Jwts
