@@ -2,5 +2,9 @@ package com.rupesh.util;
 
 public class EMpUtil {
 
-	private getConnection()
+	public static void main(String args[]) {
+		
+	}
+	
+	
 }
